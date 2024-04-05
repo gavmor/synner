@@ -1,0 +1,18 @@
+{
+  "name": "sinner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "es6-promisify": "^7.0.0",
+    "opml": "^0.5.2",
+    "podcast-xml-parser": "^2.7.1",
+    "ramda": "^0.29.1"
+  }
+}
