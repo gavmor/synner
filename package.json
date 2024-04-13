@@ -11,14 +11,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@benchristel/taste": "^0.5.0",
-    "glob": "^10.3.12",
     "opml": "^0.5.2",
     "podcast-xml-parser": "^2.7.1",
-    "ramda": "^0.29.1"
+    "progress": "^2.0.3"
   },
   "devDependencies": {
-    "@types/es6-promisify": "^6.0.4",
+    "@benchristel/taste": "^0.5.0",
+    "glob": "^10.3.12",
     "@types/node": "^20.12.7",
     "typescript": "^5.4.5"
   }

@@ -8,9 +8,9 @@ dependencies:
   '@benchristel/taste':
     specifier: ^0.5.0
     version: 0.5.0
-  es6-promisify:
-    specifier: ^7.0.0
-    version: 7.0.0
+  cli-progress:
+    specifier: ^3.12.0
+    version: 3.12.0
   glob:
     specifier: ^10.3.12
     version: 10.3.12
@@ -20,6 +20,9 @@ dependencies:
   podcast-xml-parser:
     specifier: ^2.7.1
     version: 2.7.1
+  progress:
+    specifier: ^2.0.3
+    version: 2.0.3
   ramda:
     specifier: ^0.29.1
     version: 0.29.1
@@ -144,6 +147,13 @@ packages:
     resolution: {integrity: sha512-4tYFyifaFfGacoiObjJegolkwSU4xQNGbVgUiNYVUxbQ2x2lUsFvY4hVgVzGiIe6WLOPqycWXA40l+PWsxthUw==}
     dev: false
 
+  /cli-progress@3.12.0:
+    resolution: {integrity: sha512-tRkV3HJ1ASwm19THiiLIXLO7Im7wlTuKnvkYaTkyoAPefqjNg7W7DHKUlGRxy9vxDvbyCYQkQozvptuMkGCg8A==}
+    engines: {node: '>=4'}
+    dependencies:
+      string-width: 4.2.3
+    dev: false
+
   /color-convert@2.0.1:
     resolution: {integrity: sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==}
     engines: {node: '>=7.0.0'}
@@ -210,11 +220,6 @@ packages:
 
   /emoji-regex@9.2.2:
     resolution: {integrity: sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg==}
-    dev: false
-
-  /es6-promisify@7.0.0:
-    resolution: {integrity: sha512-ginqzK3J90Rd4/Yz7qRrqUeIpe3TwSXTPPZtPne7tGBPeAaQiU8qt4fpKApnxHcq1AwtUdHVg5P77x/yrggG8Q==}
-    engines: {node: '>=6'}
     dev: false
 
   /extend@3.0.2:
@@ -419,6 +424,11 @@ packages:
     resolution: {integrity: sha512-Gpb1yArkQfBicGS3p/8/U9KRLRYlOvT75QIyOpSoux99cfeFZTH2ry5BZ8lk1TtxqY2Eiq7sXphU2mr/FS7WPw==}
     dependencies:
       xmldom: 0.6.0
+    dev: false
+
+  /progress@2.0.3:
+    resolution: {integrity: sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==}
+    engines: {node: '>=0.4.0'}
     dev: false
 
   /psl@1.9.0:

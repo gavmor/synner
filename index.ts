@@ -1,21 +1,19 @@
 import fs from 'fs'
 import podcastXmlParser from "podcast-xml-parser";
 import { extractURLs } from './src/opml';
+import { latestMP3Url } from './src/podcast';
+//@ts-expect-error
+import ProgressBar from 'progress'
 
-const OPMLPath = process.argv[2];
-const urls = await extractURLs(fs.readFileSync(OPMLPath, "utf-8"))
+const urls = await extractURLs(fs.readFileSync(process.argv[2], "utf-8"))
+const bar = new ProgressBar(':bar', { total: urls.length });
 
+const mp3URls = await Promise.all(urls.map(async (xmlUrl)=>{
+    return podcastXmlParser(new URL(xmlUrl))
+        .then(({episodes}) => latestMP3Url(episodes))
+        .catch(() => null)
+        .finally(() => bar.tick())
+    
+}))
 
-await urls.map(async (xmlUrl)=>{
-    // console.log(xmlUrl)
-    try {
-        const { podcast, episodes } = await podcastXmlParser(new URL(xmlUrl));
-        episodes[0].link
-        // Promise.all(episodes.map(async e => await podcastXmlParser(new URL(e.link))))
-        //     .then(console.log);
-    } catch (e) {
-        // console.log(e)
-    }
-})
-
-
+console.log(mp3URls)
