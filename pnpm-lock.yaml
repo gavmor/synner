@@ -25,6 +25,12 @@ dependencies:
     version: 0.29.1
 
 devDependencies:
+  '@types/es6-promisify':
+    specifier: ^6.0.4
+    version: 6.0.4
+  '@types/node':
+    specifier: ^20.12.7
+    version: 20.12.7
   typescript:
     specifier: ^5.4.5
     version: 5.4.5
@@ -53,6 +59,16 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@types/es6-promisify@6.0.4:
+    resolution: {integrity: sha512-dvDNKIo2iH/CV567kk4eXCWfrR6FMeDes2uwSNDysKpBjQTCp0G2p/ViQNVKt0V+VlUgR9hlW0SyIxAK7l7MgA==}
+    dev: true
+
+  /@types/node@20.12.7:
+    resolution: {integrity: sha512-wq0cICSkRLVaf3UGLMGItu/PtdY7oaXaI/RVU+xliKVOtRna3PRY57ZDfztpDL0n11vfymMUnXv8QwYCO7L1wg==}
+    dependencies:
+      undici-types: 5.26.5
+    dev: true
 
   /ajv@6.12.6:
     resolution: {integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==}
@@ -549,6 +565,10 @@ packages:
     resolution: {integrity: sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==}
     engines: {node: '>=14.17'}
     hasBin: true
+    dev: true
+
+  /undici-types@5.26.5:
+    resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
     dev: true
 
   /uri-js@4.4.1:

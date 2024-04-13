@@ -3,10 +3,6 @@ import {extractURLs} from "./opml.ts"
 
 const OPMLFixture = `<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <opml version="1.0">
-    <head>
-        <title>Pocket Casts Feeds</title>
-    </head>
-
     <body>
         <outline text="feeds">
             <outline
@@ -26,11 +22,44 @@ const OPMLFixture = `<?xml version="1.0" encoding="utf-8" standalone="no"?>
 </opml>
 `
 
-test("Sinner given OPML XML", {
-    "extracts URLs"(){
-        expect(extractURLs(OPMLFixture), equals, [
+test("extractURLs, given OPML XML", {
+    async "extracts URLs"(){
+        expect(await extractURLs(OPMLFixture), equals, [
             "https://feeds.megaphone.fm/bloodandsyrup",
             "https://primalblueprint.libsyn.com/rss"
         ]) 
+    },
+
+    async "with no body"(){
+        expect(await extractURLs(`<?xml version="1.0" encoding="utf-8" standalone="no"?>
+        <opml version="1.0">
+        </opml>
+        `), equals, [ ])
+    },
+
+    async "with no feeds"(){
+        expect(await extractURLs(`<?xml version="1.0" encoding="utf-8" standalone="no"?>
+        <opml version="1.0">       
+            <body>
+                <outline text="feeds"></outline>
+            </body>
+        </opml>
+        `), equals, [ ])
+    },
+
+    async "with empty body"(){
+        expect(await extractURLs(`<?xml version="1.0" encoding="utf-8" standalone="no"?>
+        <opml version="1.0">       
+            <body></body>
+        </opml>
+        `), equals, [ ])
+    },
+
+    async "with empty sting"(){
+        expect(await extractURLs(``), equals, [ ]) 
+    },
+
+    async "that is actually arbitrary XML"(){
+        expect(await extractURLs(`<foo><bar/></foo>`), equals, [ ]) 
     }
 })
