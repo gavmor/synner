@@ -1,5 +1,6 @@
 import {createWriteStream} from "fs"
 import { pipeline } from "stream/promises"
+import { fetch } from "./fetch"
 
 export function download(url: string, outputPath: string): Promise<void> {
     const stream = createWriteStream(outputPath)
